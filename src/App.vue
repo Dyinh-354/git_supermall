@@ -1,23 +1,28 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+   
+    <!-- <router-link :to="{ name: '' }"></router-link> -->
+    <!-- <router-link :to="{ name: 'category' }"></router-link> -->
+    <keep-alive exclude="Detail">
+      <router-view/>
+    </keep-alive>
+    <main-tab-bar></main-tab-bar>
   </div>
 </template>
 
 <script>
 
-export default {
-  name: "app",
-  components: {
-   
-  }
-};
+  import MainTabBar from './components/content/maintabbar/MainTabBar.vue'
+
+  export default {
+    name: "app",
+    components: {
+      MainTabBar
+    }
+  };
 </script>
 
-<style lang="less">
+<style>
+  @import "./assets/css/base.css";
 
 </style>
